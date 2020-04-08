@@ -10,9 +10,12 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "bootstrap-material-design": "4.1.1",
     "bootstrap-vue": "^2.11.0",
     "core-js": "^3.6.4",
+    "install": "^0.13.0",
     "vue": "^2.6.11",
+    "vue-grid-layout": "^2.3.7",
     "vue-router": "^3.1.6"
   },
   "devDependencies": {

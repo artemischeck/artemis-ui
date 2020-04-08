@@ -3,8 +3,8 @@
         <div class="sidebar">
             <side-bar />
         </div>
-        <div class="content">
-            <nav-bar />
+        <div class="content" ref="contentArea">
+            <nav-bar :openFullscreen.sync="openFullscreen" :closeFullscreen.sync="closeFullscreen" :fullscreen.sync="fullscreen" />
             <div class="content-view">
                 <div class="container-fluid">
                     <div class="row">
@@ -26,6 +26,44 @@ export default {
     components: {
         NavBar,
         SideBar
+    },
+    data() {
+        return {
+            fullscreen: false
+        }
+    },
+    methods: {
+        openFullscreen() {
+            var elem = this.$refs.contentArea
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+                this.fullscreen = true;
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+                this.fullscreen = true;
+            } else if (elem.webkitRequestFullscreen) { 
+                elem.webkitRequestFullscreen();
+                this.fullscreen = true;
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+                this.fullscreen = true;
+            }
+        },
+        closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+                this.fullscreen = false;
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+                this.fullscreen = false;
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+                this.fullscreen = false;
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+                this.fullscreen = false;
+            }
+        }
     }
 }
 </script>
@@ -44,5 +82,8 @@ export default {
 }
 .content {
     flex: 1;
+}
+.content-view {
+    background: #efefef;
 }
 </style>

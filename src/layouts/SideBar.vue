@@ -16,19 +16,19 @@
                     </router-link>
                 </li>
                 <li class="list-item">
-                    <a href="#" class="py-2 px-3">
+                    <router-link :to="{name: 'alerts'}" href="#" class="py-2 px-3">
                         <b-icon-bell></b-icon-bell> Alerts
-                    </a>
+                    </router-link>
                 </li>
                 <li class="list-item">
-                    <a href="#" class="py-2 px-3">
+                    <router-link :to="{name: 'team'}" href="#" class="py-2 px-3">
                         <b-icon-person></b-icon-person> Team
-                    </a>
+                    </router-link>
                 </li>
                 <li class="list-item">
-                    <a href="#" class="py-2 px-3">
+                    <router-link :to="{name: 'settings'}" href="#" class="py-2 px-3">
                         <b-icon-gear></b-icon-gear> Settings
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </div>
