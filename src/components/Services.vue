@@ -10,6 +10,8 @@
             <b-table
               :items="services"
               small
+              fixed
+              hover
               borderless
               head-variant="dark"
               :fields="fields"
@@ -23,7 +25,6 @@
 </template>
 
 <script>
-import moment from "moment";
 export default {
   name: "Services",
   data() {
@@ -31,37 +32,37 @@ export default {
       services: [
         {
           id: 1,
-          name: "Service 1",
-          updated_at: moment().format("Do MMM, YYYY hh:mm a"),
-          duration: 10,
+          name: "KYC API",
+          message: "HTTP Status 200",
+          duration: 0.21,
           status: "UP"
         },
         {
           id: 2,
-          name: "Service 2",
-          updated_at: moment().format("Do MMM, YYYY hh:mm a"),
+          name: "RabbitMQ Queue 1",
+          message: "Timeout error",
           duration: 10,
           status: "DOWN"
         },
         {
           id: 3,
-          name: "Service 3",
-          updated_at: moment().format("Do MMM, YYYY hh:mm a"),
-          duration: 10,
+          name: "MySQL Test DB1",
+          message: "Ok",
+          duration: 2.15,
           status: "WARN"
         },
         {
           id: 4,
-          name: "Service 4",
-          updated_at: moment().format("Do MMM, YYYY hh:mm a"),
-          duration: 10,
+          name: "MySQL Test DB2",
+          message: "Ok",
+          duration: 2.31,
           status: "SLOWER"
         },
         {
           id: 5,
-          name: "Service 5",
-          updated_at: moment().format("Do MMM, YYYY hh:mm a"),
-          duration: 10,
+          name: "SMS Service",
+          message: "HTTP Status 200",
+          duration: 0.33,
           status: "UP"
         }
       ],
@@ -72,8 +73,8 @@ export default {
           sortable: true
         },
         {
-          key: "updated_at",
-          label: "Last Update",
+          key: "message",
+          label: "Message",
           sortable: true
         },
         {

@@ -74,6 +74,8 @@ export default {
     flex-direction: row;
 }
 .sidebar {
+    /* background: #333; */
+    background: #343a60;
     position: fixed;
     height: 100vh;
     width: 240px;

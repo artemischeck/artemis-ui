@@ -17,7 +17,12 @@
                 </li>
                 <li class="list-item">
                     <router-link :to="{name: 'team'}" href="#" class="py-2 px-3">
-                        <b-icon-person></b-icon-person> Team
+                        <b-icon-people></b-icon-people> Team
+                    </router-link>
+                </li>
+                <li class="list-item">
+                    <router-link :to="{name: 'team'}" href="#" class="py-2 px-3">
+                        <b-icon-person></b-icon-person> Profile
                     </router-link>
                 </li>
                 <li class="list-item">
@@ -45,6 +50,6 @@ a:hover, a:focus {
     display: block;
     color: #efefef;
     text-decoration: none;
-    background: #333;
+    background: #343a40;
 }
 </style>

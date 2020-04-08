@@ -5,19 +5,44 @@
 </template>
 
 <script>
-import DefaultLayout from './layouts/DefaultLayout.vue'
+import DefaultLayout from "./layouts/DefaultLayout.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     DefaultLayout
   }
-}
+};
 </script>
 
 <style>
 #app {
   min-height: 100vh;
   color: #dfdfdf;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.alert-primary,
+.alert-info {
+  background: #343a60 !important;
+  border-color: #343a60 !important;
+}
+.bg-primary {
+  background: #343a60 !important;
+}
+.btn {
+  text-transform: uppercase;
+  font-size: 0.9em !important;
+}
+.bg-danger, .table-danger > td {
+  background: #f44336 !important;
+}
+.bg-success, .table-success > td {
+  background: #388e3c !important;
+  color: #dfdfdf;
+}
+.bg-warning, .table-warning > td {
+  background: #ffc107 !important;
 }
 </style>
