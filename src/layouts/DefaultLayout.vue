@@ -74,6 +74,7 @@ export default {
     flex-direction: row;
 }
 .sidebar {
+    position: fixed;
     height: 100vh;
     width: 240px;
     background: #fff;
@@ -81,6 +82,7 @@ export default {
     padding: 21px 0;
 }
 .content {
+    margin-left: 240px;
     flex: 1;
 }
 .content-view {

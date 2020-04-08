@@ -6,13 +6,8 @@
         <div class="menu-items">
             <ul class="list-unstyled my-4">
                 <li class="list-item">
-                    <router-link :to="{name: 'dashboards'}" class="py-2 px-3">
-                        <b-icon-house></b-icon-house> Dashboards
-                    </router-link>
-                </li>
-                <li class="list-item">
-                    <router-link :to="{name: 'new_dashboard'}" class="py-2 px-3">
-                        <b-icon-plus></b-icon-plus> New Dashboard
+                    <router-link :to="{name: 'services'}" class="py-2 px-3">
+                        <b-icon-house></b-icon-house> Services
                     </router-link>
                 </li>
                 <li class="list-item">

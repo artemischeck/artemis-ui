@@ -19,5 +19,6 @@ export default {
 #app {
   height: 100vh;
   background: #efefef;
+  margin-top: 55px;
 }
 </style>

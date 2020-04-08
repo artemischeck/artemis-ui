@@ -1,6 +1,6 @@
 <template>
     <div ref="navbar">
-        <b-navbar toggleable="lg" type="dark" variant="primary">
+        <b-navbar toggleable="lg" type="dark" variant="primary" fixed="top">
         <b-navbar-brand href="#">API Monitor</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
