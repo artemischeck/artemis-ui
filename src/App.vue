@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-dark">
     <DefaultLayout />
   </div>
 </template>
@@ -17,8 +17,7 @@ export default {
 
 <style>
 #app {
-  height: 100vh;
-  background: #efefef;
-  margin-top: 55px;
+  min-height: 100vh;
+  color: #dfdfdf;
 }
 </style>

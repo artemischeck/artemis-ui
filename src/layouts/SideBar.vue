@@ -38,13 +38,13 @@ export default {
 <style scoped>
 a {
     display: block;
-    color: #444;
+    color: #dfdfdf;
 }
 
 a:hover, a:focus {
     display: block;
-    color: #444;
+    color: #efefef;
     text-decoration: none;
-    background: #efefef;
+    background: #333;
 }
 </style>

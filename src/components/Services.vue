@@ -5,8 +5,17 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <div class="card">
-          <b-table :items="services" dark :fields="fields" small :tbody-tr-class="statusStyle" />
+        <div class="card bg-dark text-light">
+          <div class="card-body">
+            <b-table
+              :items="services"
+              small
+              borderless
+              head-variant="dark"
+              :fields="fields"
+              :tbody-tr-class="statusStyle"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -14,7 +23,7 @@
 </template>
 
 <script>
-import moment from "moment"
+import moment from "moment";
 export default {
   name: "Services",
   data() {

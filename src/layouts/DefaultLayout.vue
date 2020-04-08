@@ -1,5 +1,5 @@
 <template>
-    <div class="default-layout">
+    <div class="default-layout bg-dark">
         <div class="sidebar">
             <side-bar />
         </div>
@@ -77,15 +77,12 @@ export default {
     position: fixed;
     height: 100vh;
     width: 240px;
-    background: #fff;
-    border-right: 1px solid #efefef;
+    color: #dfdfdf;
     padding: 21px 0;
 }
 .content {
     margin-left: 240px;
     flex: 1;
-}
-.content-view {
-    background: #efefef;
+    color: #dfdfdf;
 }
 </style>
