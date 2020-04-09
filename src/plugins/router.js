@@ -11,6 +11,17 @@ import Logout from "./../components/Logout"
 
 const routes = [{
     path: '',
+    component: Login,
+    name: 'login',
+    meta: {
+        layout: 'full-page'
+    }
+}, {
+    path: '/logout/',
+    component: Logout,
+    name: 'logout'
+}, {
+    path: '/services/',
     component: Services,
     name: 'services',
 }, {
@@ -25,17 +36,6 @@ const routes = [{
     path: '/settings/',
     component: Settings,
     name: 'settings'
-}, {
-    path: '/login/',
-    component: Login,
-    name: 'login',
-    meta: {
-        layout: 'full-page'
-    }
-}, {
-    path: '/logout/',
-    component: Logout,
-    name: 'logout'
 }]
 
 export default new VueRouter({

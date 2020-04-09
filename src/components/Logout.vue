@@ -8,7 +8,7 @@ export default {
     const self = this;
     this.doLogout()
       .then(function() {
-        self.$router.push("/login/");
+        self.$router.push({name: 'login'});
       })
       .catch(function(err) {
         self.$notify({

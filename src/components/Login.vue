@@ -49,9 +49,9 @@ export default {
       axios
         .post("authenticate/", this.form)
         .then(function(res) {
-          self.$store.commit("auth/setAuthToken", res.data.details.token);
+          self.$store.commit("auth/setAuthToken", res.data.token);
           self.loading = false;
-          self.$router.push("/services/");
+          self.$router.push({name: 'services'});
         })
         .catch(function(err) {
           self.loading = false;
