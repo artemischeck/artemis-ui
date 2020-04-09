@@ -17,7 +17,6 @@
                 small
                 fixed
                 hover
-                borderless
                 head-variant="dark"
                 :fields="fields"
                 :tbody-tr-class="statusStyle"
@@ -45,10 +44,21 @@ export default {
           sortable: true
         },
         {
+          key: "host",
+          label: "Host",
+          sortable: true
+        },
+        {
           key: "message",
           label: "Message",
           sortable: true
         },
+
+        // {
+        //   key: "date_time",
+        //   label: "Last Update",
+        //   sortable: true
+        // },
         {
           key: "duration",
           label: "Duration(secs)",
@@ -69,9 +79,9 @@ export default {
     statusStyle(item, type) {
       if (!item || type !== "row") return;
       if (item.status === 1) return "table-success";
-      if (item.status === 2) return "table-danger";
+      if (item.status === 2) return "table-warning";
       if (item.status === 3) return "table-warning";
-      if (item.status === 4) return "table-warning";
+      if (item.status === 4) return "table-danger";
     },
     getServices() {
       var self = this;
