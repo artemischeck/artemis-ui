@@ -9,7 +9,7 @@
           <div class="card-body">
             <form @submit.prevent="saveChanges">
               <div class="form-group row">
-                <label class="control-label col-md-4">Alert Level</label>
+                <label class="control-label col-md-4">Status</label>
                 <div class="col-md-4">
                   <select class="form-control"></select>
                 </div>

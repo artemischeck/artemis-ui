@@ -22,8 +22,8 @@ export default {
       alerts: [],
       fields: [
         {
-          key: "level",
-          label: "Level",
+          key: "status",
+          label: "Status",
           sortable: true
         },
         {
