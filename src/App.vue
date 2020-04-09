@@ -1,17 +1,26 @@
 <template>
   <div id="app" class="bg-dark">
     <notifications group="default" />
-    <DefaultLayout />
+    <DefaultLayout v-if="!isFullPage" />
+    <FullPageLayout v-if="isFullPage" />
   </div>
 </template>
 
 <script>
 import DefaultLayout from "./layouts/DefaultLayout.vue";
+import FullPageLayout from "./layouts/FullPageLayout.vue";
 
 export default {
   name: "App",
   components: {
-    DefaultLayout
+    DefaultLayout,
+    FullPageLayout
+  },
+  computed: {
+    isFullPage() {
+      if (!this.$route.meta) return false;
+      return this.$route.meta.layout === "full-page";
+    }
   }
 };
 </script>
@@ -20,6 +29,9 @@ export default {
 #app {
   min-height: 100vh;
   color: #dfdfdf;
+}
+.text-dark {
+  color: #343a60 !important;
 }
 .btn-primary,
 .btn-primary:hover,
@@ -48,5 +60,8 @@ export default {
 .bg-warning,
 .table-warning > td {
   background: #ffc107 !important;
+}
+.card, .btn {
+  border-radius: 0 !important;
 }
 </style>

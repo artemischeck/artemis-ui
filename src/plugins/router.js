@@ -12,7 +12,7 @@ import Logout from "./../components/Logout"
 const routes = [{
     path: '',
     component: Services,
-    name: 'services'
+    name: 'services',
 }, {
     path: '/team/',
     component: Team,
@@ -28,7 +28,10 @@ const routes = [{
 }, {
     path: '/login/',
     component: Login,
-    name: 'login'
+    name: 'login',
+    meta: {
+        layout: 'full-page'
+    }
 }, {
     path: '/logout/',
     component: Logout,

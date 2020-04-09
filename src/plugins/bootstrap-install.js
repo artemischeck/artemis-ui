@@ -9,7 +9,8 @@ import {
     BIconGear,
     BIconPeople,
     BIconPerson,
-    BIconBell
+    BIconBell,
+    BSpinner
 } from 'bootstrap-vue'
 
 // Install Bootstrap Vue
@@ -24,6 +25,7 @@ Vue.component('BIconGear', BIconGear)
 Vue.component('BIconPerson', BIconPerson)
 Vue.component('BIconPeople', BIconPeople)
 Vue.component('BIconBell', BIconBell)
+Vue.component('b-spinner', BSpinner)
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
