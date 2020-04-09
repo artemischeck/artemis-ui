@@ -46,7 +46,13 @@
                 </div>
               </div>
               <div>
-                <button class="btn btn-primary" type="submit">Save Changes</button>
+                <button class="btn btn-primary" type="submit" :disabled="loading">
+                  <span v-if="!loading">Save Changes</span>
+                  <span v-if="loading">
+                    <b-spinner small></b-spinner>
+                    <span class="sr-only">Loading...</span>
+                  </span>
+                </button>
               </div>
             </form>
           </div>
@@ -67,6 +73,16 @@ export default {
   name: "Alerts",
   components: {
     AlertsList
+  },
+  data() {
+    return {
+      loading: false
+    };
+  },
+  methods: {
+    saveChanges() {
+      this.loading = !this.loading;
+    }
   }
 };
 </script>

@@ -13,12 +13,13 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "AlertsList",
   data() {
     return {
-      loading: true,
-      alerts: [{ level: "Up", occurance: "10 mins", channels: "Slack, Email" }],
+      loading: false,
+      alerts: [],
       fields: [
         {
           key: "level",
@@ -36,6 +37,33 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    getAlerts() {
+      axios
+        .get("alerts/", {})
+        .then(function(res) {
+          self.loading = false;
+          self.alerts = res.data.results;
+        })
+        .catch(function(err) {
+          self.loading = false;
+          let errorMessage = err;
+          if (err.response) {
+            if (err.response.data) {
+              if (err.response.data.details) {
+                errorMessage = err.response.data.details;
+              }
+            }
+          }
+          self.$notify({
+            group: "default",
+            type: "error",
+            title: "Error",
+            text: errorMessage
+          });
+        });
+    }
   }
 };
 </script>

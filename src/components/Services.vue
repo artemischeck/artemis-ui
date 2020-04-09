@@ -75,7 +75,7 @@ export default {
     },
     getServices() {
       axios
-        .get("services/", this.form)
+        .get("services/", {})
         .then(function(res) {
           self.loading = false;
           self.services = res.data.results;
