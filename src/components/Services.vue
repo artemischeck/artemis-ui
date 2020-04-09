@@ -40,7 +40,7 @@ export default {
       services: [],
       fields: [
         {
-          key: "name",
+          key: "label",
           label: "Service",
           sortable: true
         },
@@ -68,12 +68,14 @@ export default {
   methods: {
     statusStyle(item, type) {
       if (!item || type !== "row") return;
-      if (item.status === "UP") return "table-success";
-      if (item.status === "DOWN") return "table-danger";
-      if (item.status === "SLOWER") return "table-warning";
-      if (item.status === "WARN") return "table-warning";
+      if (item.status === 1) return "table-success";
+      if (item.status === 2) return "table-danger";
+      if (item.status === 3) return "table-warning";
+      if (item.status === 4) return "table-warning";
     },
     getServices() {
+      var self = this;
+      self.loading = true;
       axios
         .get("services/", {})
         .then(function(res) {

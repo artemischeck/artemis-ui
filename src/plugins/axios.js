@@ -8,7 +8,7 @@ axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
 axios.interceptors.request.use(function (request) {
     const token = auth.getters.getAccessToken()
     if (token) {
-        request.headers.Authorization = `Bearer ${token}`
+        request.headers.Authorization = `Token ${token}`
     }
     return request
 }, function (error) {
