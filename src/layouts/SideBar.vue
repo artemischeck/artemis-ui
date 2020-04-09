@@ -15,7 +15,7 @@
                         <b-icon-bell></b-icon-bell> Alerts
                     </router-link>
                 </li>
-                <li class="list-item">
+                <!-- <li class="list-item">
                     <router-link :to="{name: 'team'}" href="#" class="py-2 px-3">
                         <b-icon-people></b-icon-people> Team
                     </router-link>
@@ -29,7 +29,7 @@
                     <router-link :to="{name: 'settings'}" href="#" class="py-2 px-3">
                         <b-icon-gear></b-icon-gear> Settings
                     </router-link>
-                </li>
+                </li> -->
                 <li class="list-item">
                     <router-link :to="{name: 'logout'}" href="#" class="py-2 px-3">
                         <b-icon-gear></b-icon-gear> Logout

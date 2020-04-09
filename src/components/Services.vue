@@ -7,16 +7,22 @@
       <div class="col-12">
         <div class="card bg-dark text-light">
           <div class="card-body">
-            <b-table
-              :items="services"
-              small
-              fixed
-              hover
-              borderless
-              head-variant="dark"
-              :fields="fields"
-              :tbody-tr-class="statusStyle"
-            />
+            <div class="text-center" v-if="loading">
+              <b-spinner variant="primary" label="Text Centered"></b-spinner>
+              <div>Loading..</div>
+            </div>
+            <div v-if="!loading">
+              <b-table
+                :items="services"
+                small
+                fixed
+                hover
+                borderless
+                head-variant="dark"
+                :fields="fields"
+                :tbody-tr-class="statusStyle"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -25,47 +31,13 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Services",
   data() {
     return {
-      services: [
-        {
-          id: 1,
-          name: "KYC API",
-          message: "HTTP Status 200",
-          duration: 0.21,
-          status: "UP"
-        },
-        {
-          id: 2,
-          name: "RabbitMQ Queue 1",
-          message: "Timeout error",
-          duration: 10,
-          status: "DOWN"
-        },
-        {
-          id: 3,
-          name: "MySQL Test DB1",
-          message: "Ok",
-          duration: 2.15,
-          status: "WARN"
-        },
-        {
-          id: 4,
-          name: "MySQL Test DB2",
-          message: "Ok",
-          duration: 2.31,
-          status: "SLOWER"
-        },
-        {
-          id: 5,
-          name: "SMS Service",
-          message: "HTTP Status 200",
-          duration: 0.33,
-          status: "UP"
-        }
-      ],
+      loading: false,
+      services: [],
       fields: [
         {
           key: "name",
@@ -90,6 +62,9 @@ export default {
       ]
     };
   },
+  created() {
+    this.getServices();
+  },
   methods: {
     statusStyle(item, type) {
       if (!item || type !== "row") return;
@@ -97,6 +72,31 @@ export default {
       if (item.status === "DOWN") return "table-danger";
       if (item.status === "SLOWER") return "table-warning";
       if (item.status === "WARN") return "table-warning";
+    },
+    getServices() {
+      axios
+        .get("services/", this.form)
+        .then(function(res) {
+          self.loading = false;
+          self.services = res.data.results;
+        })
+        .catch(function(err) {
+          self.loading = false;
+          let errorMessage = err;
+          if (err.response) {
+            if (err.response.data) {
+              if (err.response.data.details) {
+                errorMessage = err.response.data.details;
+              }
+            }
+          }
+          self.$notify({
+            group: "default",
+            type: "error",
+            title: "Error",
+            text: errorMessage
+          });
+        });
     }
   }
 };

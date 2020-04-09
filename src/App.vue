@@ -30,7 +30,9 @@ export default {
   min-height: 100vh;
   color: #dfdfdf;
 }
-.text-dark {
+.text-dark,
+.spinner-border.text-primary,
+.text-primary {
   color: #343a60 !important;
 }
 .btn-primary,
@@ -61,7 +63,12 @@ export default {
 .table-warning > td {
   background: #ffc107 !important;
 }
-.card, .btn {
+.card,
+.btn {
   border-radius: 0 !important;
+}
+h4 {
+  font-size: 1.3rem;
+  font-weight: 400;
 }
 </style>
