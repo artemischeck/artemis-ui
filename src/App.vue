@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="bg-dark">
+    <notifications group="default" />
     <DefaultLayout />
   </div>
 </template>
@@ -35,14 +36,17 @@ export default {
   text-transform: uppercase;
   font-size: 0.9em !important;
 }
-.bg-danger, .table-danger > td {
+.bg-danger,
+.table-danger > td {
   background: #f44336 !important;
 }
-.bg-success, .table-success > td {
+.bg-success,
+.table-success > td {
   background: #388e3c !important;
   color: #dfdfdf;
 }
-.bg-warning, .table-warning > td {
+.bg-warning,
+.table-warning > td {
   background: #ffc107 !important;
 }
 </style>

@@ -30,6 +30,11 @@
                         <b-icon-gear></b-icon-gear> Settings
                     </router-link>
                 </li>
+                <li class="list-item">
+                    <router-link :to="{name: 'logout'}" href="#" class="py-2 px-3">
+                        <b-icon-gear></b-icon-gear> Logout
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>
