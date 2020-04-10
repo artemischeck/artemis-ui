@@ -17,10 +17,19 @@
                 small
                 fixed
                 hover
-                head-variant="dark"
-                :fields="fields"
-                :tbody-tr-class="statusStyle"
-              />
+                dark
+                :fields="fields" 
+              >
+              <template v-slot:cell(status)="data">
+                <div class="text-center">
+                  <span v-if="data.value == 1">UP</span>
+                  <span v-if="data.value == 2">SLOW</span>
+                  <span v-if="data.value == 3">WARN</span>
+                  <span v-if="data.value == 4">DOWN</span>
+                  <span v-if="data.value == 5">NO SIGNAL</span>
+                </div>
+            </template>
+            </b-table>
             </div>
           </div>
         </div>
@@ -41,7 +50,8 @@ export default {
         {
           key: "label",
           label: "Service",
-          sortable: true
+          sortable: true,
+          stickyColumn: true
         },
         {
           key: "host",
@@ -67,7 +77,9 @@ export default {
         {
           key: "status",
           label: "Status",
-          sortable: true
+          sortable: true,
+          tdClass: this.statusStyle,
+          stickyColumn: true
         }
       ]
     };
@@ -76,12 +88,12 @@ export default {
     this.getServices();
   },
   methods: {
-    statusStyle(item, type) {
-      if (!item || type !== "row") return;
-      if (item.status === 1) return "table-success";
-      if (item.status === 2) return "table-warning";
-      if (item.status === 3) return "table-warning";
-      if (item.status === 4) return "table-danger";
+    statusStyle(value, key, item) {
+      if (item.status === 1) return "bg-success";
+      if (item.status === 2) return "bg-warning";
+      if (item.status === 3) return "bg-warning";
+      if (item.status === 4) return "bg-danger";
+      if (item.status === 5) return "bg-secondary";
     },
     getServices() {
       var self = this;
